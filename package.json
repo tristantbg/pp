@@ -1,0 +1,21 @@
+{
+  "name": "",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-php": "*",
+    "jeet": "*",
+    "rupture": "*"
+  },
+  "dependencies": {
+    "lazysizes": "^3.0.0-rc4",
+    "masonry-layout": "^4.1.1",
+    "packery": "^2.1.1"
+  }
+}

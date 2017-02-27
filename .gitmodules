@@ -1,0 +1,12 @@
+[submodule "kirby"]
+	path = kirby
+	url = git://github.com/getkirby/kirby.git
+[submodule "panel"]
+	path = panel
+	url = git://github.com/getkirby/panel.git
+[submodule "toolkit"]
+	path = kirby/toolkit
+	url = git://github.com/getkirby/toolkit.git
+[submodule "site/fields/builder"]
+	path = site/fields/builder
+	url = https://github.com/TimOetting/kirby-builder.git
