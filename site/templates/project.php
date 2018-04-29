@@ -17,9 +17,10 @@ $client = $page->client();
 				<?php $image = $image->toFile(); ?>
 
 				<?php if($image->videolink()->isNotEmpty()): ?>
-					<div class="content-item video-item<?php e($image->fullwidth()->bool(),' fullwidth') ?>">
-						<?= $image->videolink()->oembed([
-						  'thumb' => thumb($image, array('width'=>1500))->url()
+					<div class="content-item video-item <?= $image->contentsize() ?>">
+						<?= $image->videolink()->embed([
+							'lazyvideo' => true,
+							'thumb' => thumb($image, array('width'=>1500))->url()
 						]) ?>
 						<?php if($image->caption()->isNotEmpty()): ?>
 						<div class="item-caption">
@@ -29,7 +30,7 @@ $client = $page->client();
 					</div>
 				<?php else: ?>
 					
-					<div class="content-item image-item<?php e($image->fullwidth()->bool(),' fullwidth') ?>">
+					<div class="content-item image-item <?= $image->contentsize() ?>">
 							<?php 
 							$srcset = '';
 							for ($i = 500; $i <= 2000; $i += 500) $srcset .= resizeOnDemand($image, $i) . ' ' . $i . 'w,';
@@ -85,7 +86,17 @@ $client = $page->client();
 				<div class="col-2 x xafe">
 					<div id="next-project">
 						<?php if($page->hasNextVisible()): ?>
-						<?php $next = $page->nextVisible() ?>
+						<?php
+						$next = $page->nextVisible();
+						while ($next->imageonly()->bool()) {
+							if($next->hasNextVisible()){
+								$next = $next->nextVisible();
+							}
+							else {
+								$next = $page->parent()->children()->visible()->first();
+							}
+						}
+						?>
 						<?php else: ?>
 						<?php $next = $page->parent()->children()->visible()->first() ?>
 						<?php endif ?>
@@ -96,7 +107,8 @@ $client = $page->client();
 						endif
 						?>
 						<a href="<?= $next->url() ?>" data-title="<?= $ntitle ?>" data-target="project">
-						Next project
+						Next project:
+						<br><?= $ntitle ?>
 						</a>	
 					</div>
 				</div>

@@ -7,8 +7,8 @@ fields:
   title:
     label: Title
     type:  text
-  infos:
-    label: Infos
+  text:
+    label: Text
     type:  textarea
   credits:
     label: Credits

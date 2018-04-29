@@ -2,7 +2,9 @@ module.exports = function(grunt) {
     grunt.initConfig({
         concat: {
             plugins: {
-                src: ['site/plugins/oembed/assets/js/oembed.js', 'node_modules/packery/dist/packery.pkgd.min.js', 'node_modules/masonry-layout/dist/masonry.pkgd.min.js', 'node_modules/lazysizes/lazysizes.min.js', 'node_modules/lazysizes/plugins/optimumx/ls.optimumx.min.js', 'lib/history.js/scripts/bundled/html4+html5/jquery.history.js'],
+                src: [
+                // 'site/plugins/embed/assets/js/embed.js', 
+                'node_modules/packery/dist/packery.pkgd.min.js', 'node_modules/masonry-layout/dist/masonry.pkgd.min.js', 'node_modules/lazysizes/lazysizes.min.js', 'node_modules/lazysizes/plugins/optimumx/ls.optimumx.min.js', 'lib/history.js/scripts/bundled/html4+html5/jquery.history.js'],
                 dest: 'assets/js/plugins.concat.js'
             },
             js: {
@@ -42,7 +44,7 @@ module.exports = function(grunt) {
           },
           target: {
             files: {
-              'assets/css/build/build.min.css': ['lib/normalize-css/normalize.css', 'site/plugins/oembed/assets/css/oembed.css', 'assets/css/app.min.css']
+              'assets/css/build/build.min.css': ['lib/normalize-css/normalize.css', 'site/plugins/embed/assets/css/embed.css', 'assets/css/app.min.css']
             }
           }
         },

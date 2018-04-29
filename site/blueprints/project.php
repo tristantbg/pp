@@ -7,12 +7,16 @@ files:
   fields:
     videolink:
       label: Video Link
-      type: text
-      icon: code
+      type: url
       help: Youtube or Vimeo
-    fullwidth:
-      type: checkbox
-      text: Full Width
+    contentsize:
+      label: Size
+      type: radio
+      default: medium
+      options:
+        small: Small
+        medium: Medium
+        fullwidth: Fullwidth
     caption:
       label: Caption
       type: textarea

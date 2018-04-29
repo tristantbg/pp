@@ -1,0 +1,13 @@
+Videolink: 
+
+----
+
+Autoplay: 0
+
+----
+
+Fullwidth: 1
+
+----
+
+Caption: 

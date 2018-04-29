@@ -65,7 +65,7 @@ body.page::before, body.page::after
 	transform(none)
 
 img.lazyimg
-	transition(filter 500ms ease)
+	transition(filter 400ms ease)
 	//opacity 0.4
 	filter(blur(20px))
 
@@ -89,6 +89,10 @@ p:last-child
 *
 	hideselect()
 	box-sizing(border-box)
+
+::-webkit-scrollbar
+	width 0px
+	background transparent
 
 a, a:hover, a:visited, a:focus
 	color inherit
@@ -117,7 +121,7 @@ a, a:hover, a:visited, a:focus
 	a
 		border-bottom 1px solid
 	.inner
-		padding 8rem 20%
+		padding 15% 20%
 
 .no-js, .no-svg, .no-flexbox
 	#outdated
@@ -280,7 +284,6 @@ header:hover
 		+above($md + 1)
 			opacity 1
 
-
 #categories
 	position fixed
 	width 100%
@@ -376,6 +379,10 @@ header:hover
 	.content-item.fullwidth
 		+above($md + 1)
 			padding 0
+	.content-item.small
+		+above($md + 1)
+			padding-left 33%
+			padding-right 33%
 	.content-item.image-item
 		overflow hidden
 	.project-description
@@ -407,16 +414,17 @@ header:hover
 
 @keyframes expandAbout {
 	0% {
-		width 14rem
+		width 27.8vw
 	}
     100% {
         width 50%
+        font-size 2rem
     }
 }
 
 @keyframes expandName {
     100% {
-        width 7.8rem
+        width 15.5vw
     }
 }
 
@@ -438,6 +446,7 @@ body.intro
 	#intro
 		display block
 	header
+		font-size 4vw
 		pointer-events none
 		justify-content center
 		transform(translateY(calc(50vh - 4rem)))
@@ -506,9 +515,8 @@ body.page
 	header
 		#close-page
 			display block
-			+below($md)
-				opacity 1
+			opacity 1
 
-.no-js, .no-csstransforms, .no-csstransitions, .no-cssfilters, .no-flexbox
+.no-js, .no-csstransforms, .no-csstransitions, .no-cssfilters, .no-flexbox, .no-cssvwunit
 	#outdated
 		display block
