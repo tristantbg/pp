@@ -167,7 +167,7 @@ $(function() {
         var wrapper = this.parentNode;
         var embed = wrapper.children[0];
         var script = wrapper.querySelector('script');
-        embed.src = script.getAttribute('data-src')+'&autoplay=1';
+        embed.src = script ? script.getAttribute('data-src')+'&autoplay=1' : embed.getAttribute('data-src')+'&autoplay=1';
         wrapper.removeChild(this);
       };
 
@@ -176,7 +176,6 @@ $(function() {
       for (var i = 0; i < thumb.length; i++) {
         thumb[i].addEventListener('click', pluginEmbedLoadLazyVideo, false);
       }
-
     },
     loadContent: function(url, target) {
       $body.removeClass('loaded').addClass('loading');
