@@ -165,9 +165,13 @@ $(function() {
     embed: function() {
       var pluginEmbedLoadLazyVideo = function() {
         var wrapper = this.parentNode;
-        var embed = wrapper.children[0];
+        var embed = wrapper.querySelector('iframe');
         var script = wrapper.querySelector('script');
-        // embed.src = script ? script.getAttribute('data-src')+'&autoplay=1' : embed.getAttribute('src')+'&autoplay=1';
+        if (embed.getAttribute('src')) {
+          // embed.src = embed.getAttribute('src')+'&autoplay=1';
+        } else {
+          embed.src = script ? script.getAttribute('data-src')+'&autoplay=1' : embed.getAttribute('data-src')+'&autoplay=1';
+        }
         wrapper.removeChild(this);
       };
 
