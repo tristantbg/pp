@@ -111,6 +111,7 @@ $(function() {
       if ($body.hasClass('intro')) {
         $body.addClass('intro-start');
         setTimeout(function() {
+          $('.atelier').remove();
           $body.attr('class', 'loaded');
         }, 4500);
       }

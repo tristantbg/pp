@@ -88,6 +88,7 @@
 <?php $about = $pages->find('about') ?>
 
 <header<?php e($page->template() == 'about', ' class="with-names"') ?>>
+	<span class="atelier">Atelier</span>
 	<span class="about-link">
 		<a href="<?= $about->url() ?>" data-title="<?= $about->title()->html() ?>" data-target="about">
 		<span>Pierre&nbsp;</span><span class="name reveal">Pautler</span>

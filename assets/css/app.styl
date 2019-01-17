@@ -245,10 +245,19 @@ header
 	span
 		display inline-block
 		overflow hidden
+	span.atelier
+		width 100%
+		flexbox()
+		justify-content center
+		align(vertical)
+		left 0
+		top calc(50% - 1em)
 	span.about-link
 		white-space nowrap
 	span.about-link:last-child
 		text-align right
+	.name
+		display none
 	#close-page
 		display none
 		width 1.6rem
@@ -414,7 +423,7 @@ header:hover
 
 @keyframes expandAbout {
 	0% {
-		width 27.8vw
+		width 12.3vw
 	}
     100% {
         width 50%
@@ -437,6 +446,12 @@ header:hover
 @keyframes reveal {
     100% {
         opacity 1
+    }
+}
+
+@keyframes hide {
+    100% {
+        opacity 0
     }
 }
 
@@ -468,6 +483,12 @@ body.intro.intro-start
 		animation-delay 2s
 		animation-timing-function $kinetic
 		animation-fill-mode forwards
+		.atelier
+			animation-name hide
+			animation-duration 0.3s
+			animation-delay 0s
+			animation-timing-function ease
+			animation-fill-mode forwards
 		.reveal
 			animation-name expandName
 			animation-duration 1s
